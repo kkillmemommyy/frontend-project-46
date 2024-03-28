@@ -6,9 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "killmemommy",
   "license": "ISC",
   "type": "module",
+  "bin": {
+    "gendiff": "bin/gendiff.js"
+  },
   "dependencies": {
     "commander": "^12.0.0"
   }

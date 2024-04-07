@@ -1,13 +1,16 @@
 import { readFileSync } from 'fs';
 import { cwd } from 'process';
-import { resolve, extname } from 'path';
+import { resolve } from 'path';
 import yaml from 'js-yaml';
 
-const isSupportedFormat = (filepath) => {
-  const supportedExtensions = ['.json', '.yaml', '.yml'];
-  const fileExtension = extname(filepath);
-  for (const currentExtension of supportedExtensions) {
-    if (fileExtension === currentExtension) {
+const isSupportedFormat = (format, stream = 'input') => {
+  const supportedFormats = {
+    'input': ['.json', '.yaml', '.yml'],
+    'output': ['json', 'plain', 'stylish'],
+  };
+  const currentStream = supportedFormats[stream];
+  for (const currentFormat of currentStream) {
+    if (format === currentFormat) {
       return true;
     }
   }

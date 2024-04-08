@@ -14,3 +14,9 @@ lint:
 
 lint-fix:
 	npx eslint --fix .
+
+test:
+	npx jest
+
+test-cov:
+	npx jest --coverage

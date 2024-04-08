@@ -2,7 +2,7 @@
 import { readFile, deserialize, validate, getFileExtension } from './FileUtils.js';
 import compare from './Compare.js';
 
-const generateDifferences = (filepath1, filepath2, outputFormat = 'plain') => {
+const generateDifferences = (filepath1, filepath2, outputFormat = 'stylish') => {
   const errors = validate(filepath1, filepath2, outputFormat);
 
   if (errors.length > 0) {

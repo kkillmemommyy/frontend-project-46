@@ -8,3 +8,9 @@ install-dev:
 
 uninstall:
 	npm uninstall --global @hexlet/code
+
+lint:
+	npx eslint .
+
+lint-fix:
+	npx eslint --fix .

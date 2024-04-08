@@ -1,9 +1,9 @@
-import _ from 'lodash'
+import _ from 'lodash';
 
-const Compare = (data1, data2) => {
+const compare = (data1, data2) => {
   const dataKeys1 = Object.keys(data1);
   const dataKeys2 = Object.keys(data2);
-  const keys = _.sortBy(_.uniq([...dataKeys1, ...dataKeys2]))
+  const keys = _.sortBy(_.uniq([...dataKeys1, ...dataKeys2]));
 
   const diff = keys.reduce((acc, key) => {
     if (!Object.hasOwn(data1, key)) {
@@ -20,7 +20,7 @@ const Compare = (data1, data2) => {
     return acc;
   }, []);
 
-  return `{\n${diff.join(`\n`)}\n}`
+  return `{\n${diff.join('\n')}\n}`;
 };
 
-export { Compare };
+export default compare;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1712579289930" clover="3.2.0">
-  <project timestamp="1712579289931" name="All files">
+<coverage generated="1712580006984" clover="3.2.0">
+  <project timestamp="1712580006984" name="All files">
     <metrics statements="53" coveredstatements="46" conditionals="22" coveredconditionals="16" methods="7" coveredmethods="7" elements="82" coveredelements="69" complexity="0" loc="53" ncloc="53" packages="1" files="3" classes="3"/>
     <file name="Compare.js" path="/home/krirll/code/front/frontend-project-46/src/Compare.js">
       <metrics statements="15" coveredstatements="15" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>

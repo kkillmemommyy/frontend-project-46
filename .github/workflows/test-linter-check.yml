@@ -17,16 +17,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '21'
-      - name: Install dependencies
+      - name: install dependencies
         run: |
-          make install
+          make install-in-workflow
       - name: linter check
         run: |
           make lint
       - name: tests check
         run: |
           make test
-      - name: Test & publish code coverage
+      - name: test & publish code coverage
         uses:
           paambaati/codeclimate-action@v3.0.0
           # Add Code Climate secret key

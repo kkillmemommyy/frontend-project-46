@@ -1,0 +1,37 @@
+name: test-linter-check
+
+on:
+  - push
+  - pull_request
+
+env:
+  CI: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone repo
+        uses: actions/checkout@v4
+      - name: use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '21'
+      - name: Install dependencies
+        run: |
+          make install
+      - name: linter check
+        run: |
+          make lint
+      - name: tests check
+        run: |
+          make test
+      - name: Test & publish code coverage
+        uses:
+          paambaati/codeclimate-action@v3.0.0
+          # Add Code Climate secret key
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+        with:
+          coverageCommand: make test-cov
+          debug: true

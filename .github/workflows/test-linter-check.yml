@@ -18,17 +18,14 @@ jobs:
         with:
           node-version: '21'
       - name: install dependencies
-        run: |
-          make install-in-workflow
+        run: make install-in-workflow
       - name: linter check
-        run: |
-          make lint
+        run: make lint
       - name: tests check
-        run: |
-          make test
-      - name: test & publish code coverage
+        run: make test
+      - name: check code coverage
         uses:
-          paambaati/codeclimate-action@v3.0.0
+          paambaati/codeclimate-action@v5.0.0
           # Add Code Climate secret key
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}

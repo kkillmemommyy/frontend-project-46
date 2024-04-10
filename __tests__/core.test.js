@@ -25,6 +25,22 @@ test('json with result in json', () => {
   expect(generateDifferences(file1Path, file2Path, 'json')).toEqual(expected);
 });
 
+test('yaml with result in stylish', () => {
+  const file1Path = pathToFixture('file1.yml');
+  const file2Path = pathToFixture('file2.yaml');
+  const expected = readFile('stylish.txt');
+
+  expect(generateDifferences(file1Path, file2Path)).toEqual(expected);
+});
+
+test('yaml with result in json', () => {
+  const file1Path = pathToFixture('file1.yml');
+  const file2Path = pathToFixture('file2.yaml');
+  const expected = readFile('json.txt');
+
+  expect(generateDifferences(file1Path, file2Path, 'json')).toEqual(expected);
+});
+
 test('get errors', () => {
   const file1Path = pathToFixture('flat1.txt');
   const file2Path = pathToFixture('flat2.mp3');

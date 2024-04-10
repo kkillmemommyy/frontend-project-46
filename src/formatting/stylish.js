@@ -17,7 +17,9 @@ const makeStylish = (diff, depth = 0) => {
   const currentShift = shift.repeat(depth);
 
   const stringifyDiff = diff.map((node) => {
-    const { key, oldValue, value, status } = node;
+    const {
+      key, oldValue, value, status,
+    } = node;
 
     if (status === 'unchanged') {
       return `${currentShift}    ${key}: ${stringify(value, depth + 1)}`;

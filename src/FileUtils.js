@@ -17,10 +17,10 @@ const isSupportedFormat = (format, stream = 'input') => {
   return false;
 };
 
-const validate = (filepath1, filepath2, outputFormat) => {
+const validate = (pathToFile1, pathToFile2, outputFormat) => {
   const errors = [];
-  const fileExtension1 = getFileExtension(filepath1);
-  const fileExtension2 = getFileExtension(filepath2);
+  const fileExtension1 = getFileExtension(pathToFile1);
+  const fileExtension2 = getFileExtension(pathToFile2);
 
   if (!isSupportedFormat(fileExtension1)) {
     errors.push(`file1 extension must be ".json" or ".yaml" but given "${fileExtension1}"`);
@@ -31,11 +31,11 @@ const validate = (filepath1, filepath2, outputFormat) => {
   if (!isSupportedFormat(outputFormat, 'output')) {
     errors.push(`supported formats are "json", "plain" or "stylish" but given "${outputFormat}"`);
   }
-  if (!existsSync(filepath1)) {
-    errors.push(`file with path "${filepath1}" does not exist`);
+  if (!existsSync(pathToFile1)) {
+    errors.push(`file with path "${pathToFile1}" does not exist`);
   }
-  if (!existsSync(filepath2)) {
-    errors.push(`file with path "${filepath2}" does not exist`);
+  if (!existsSync(pathToFile2)) {
+    errors.push(`file with path "${pathToFile2}" does not exist`);
   }
 
   return errors;
@@ -51,9 +51,9 @@ const deserialize = (data, format) => {
   return parsers[format](data);
 };
 
-const readFile = (filepath) => {
+const readFile = (pathToFile) => {
   const workingDir = cwd();
-  const absolutePath = resolve(workingDir, filepath);
+  const absolutePath = resolve(workingDir, pathToFile);
   const fileData = readFileSync(absolutePath, 'utf-8');
   return fileData;
 };

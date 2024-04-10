@@ -11,11 +11,11 @@ program
   + 'Supported output formats: "plain", "stylish" or "json".',
   )
   .version('1.0.0')
-  .option('-f, --format [type]', 'Output format. Default is stylish')
-  .argument('<filepath1>', 'Path to file1. Can be raltive or absolute')
-  .argument('<filepath2>', 'Path to file2. Can be raltive or absolute')
-  .action((filePath1, filePath2) => {
-    console.log(generateDifferences(filePath1, filePath2, program.opts().format));
+  .option('-f, --format [type]', 'output format', 'stylish')
+  .argument('<pathToFile1>', 'relative or absolute')
+  .argument('<pathToFile2>', 'relative or absolute')
+  .action((pathToFile1, pathToFile2) => {
+    console.log(generateDifferences(pathToFile1, pathToFile2, program.opts().format));
   });
 
 program.parse();

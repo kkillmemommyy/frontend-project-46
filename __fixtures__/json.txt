@@ -5,35 +5,35 @@
    {
     "key": "follow",
     "value": false,
-    "type": "added"
+    "status": "added"
    },
    {
     "key": "setting1",
     "value": "Value 1",
-    "type": "unchanged"
+    "status": "unchanged"
    },
    {
     "key": "setting2",
     "value": 200,
-    "type": "deleted"
+    "status": "deleted"
    },
    {
     "key": "setting3",
     "oldValue": true,
     "value": null,
-    "type": "changed"
+    "status": "changed"
    },
    {
     "key": "setting4",
     "value": "blah blah",
-    "type": "added"
+    "status": "added"
    },
    {
     "key": "setting5",
     "value": {
      "key5": "value5"
     },
-    "type": "added"
+    "status": "added"
    },
    {
     "key": "setting6",
@@ -45,26 +45,26 @@
         "key": "wow",
         "oldValue": "",
         "value": "so much",
-        "type": "changed"
+        "status": "changed"
        }
       ],
-      "type": "hasChild"
+      "status": "hasChild"
      },
      {
       "key": "key",
       "value": "value",
-      "type": "unchanged"
+      "status": "unchanged"
      },
      {
       "key": "ops",
       "value": "vops",
-      "type": "added"
+      "status": "added"
      }
     ],
-    "type": "hasChild"
+    "status": "hasChild"
    }
   ],
-  "type": "hasChild"
+  "status": "hasChild"
  },
  {
   "key": "group1",
@@ -73,12 +73,12 @@
     "key": "baz",
     "oldValue": "bas",
     "value": "bars",
-    "type": "changed"
+    "status": "changed"
    },
    {
     "key": "foo",
     "value": "bar",
-    "type": "unchanged"
+    "status": "unchanged"
    },
    {
     "key": "nest",
@@ -86,10 +86,10 @@
      "key": "value"
     },
     "value": "str",
-    "type": "changed"
+    "status": "changed"
    }
   ],
-  "type": "hasChild"
+  "status": "hasChild"
  },
  {
   "key": "group2",
@@ -99,7 +99,7 @@
     "id": 45
    }
   },
-  "type": "deleted"
+  "status": "deleted"
  },
  {
   "key": "group3",
@@ -111,6 +111,6 @@
    },
    "fee": 100500
   },
-  "type": "added"
+  "status": "added"
  }
 ]

@@ -9,20 +9,20 @@ const pathToFixturesDir = path.join(pathToCurrentDir, '..', '__fixtures__');
 const pathToFixture = (filename) => `${pathToFixturesDir}/${filename}`;
 const readFile = (filename) => readFileSync(pathToFixture(filename), 'utf-8');
 
-test('flat json with result in stylish', () => {
-  const file1Path = pathToFixture('flat1.json');
-  const file2Path = pathToFixture('flat2.json');
-  const expected = readFile('stylishFlat.txt');
+test('json with result in stylish', () => {
+  const file1Path = pathToFixture('file1.json');
+  const file2Path = pathToFixture('file2.json');
+  const expected = readFile('stylish.txt');
 
   expect(generateDifferences(file1Path, file2Path)).toEqual(expected);
 });
 
-test('flat yaml with result in stylish', () => {
-  const file1Path = pathToFixture('flat1.yaml');
-  const file2Path = pathToFixture('flat2.yml');
-  const expected = readFile('stylishFlat.txt');
+test('json with result in json', () => {
+  const file1Path = pathToFixture('file1.json');
+  const file2Path = pathToFixture('file2.json');
+  const expected = readFile('json.txt');
 
-  expect(generateDifferences(file1Path, file2Path)).toEqual(expected);
+  expect(generateDifferences(file1Path, file2Path, 'json')).toEqual(expected);
 });
 
 test('get errors', () => {

@@ -1,4 +1,6 @@
 {
+  - arr: [1,2,[3,4]]
+  + arr: [1,2,[3,5]]
     common: {
       + follow: false
         setting1: Value 1

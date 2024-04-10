@@ -3,7 +3,10 @@ import _ from 'lodash';
 const shift = '    ';
 
 const stringify = (obj, depth) => {
-  if (!_.isObject(obj) || Array.isArray(obj)) {
+  if (Array.isArray(obj)) {
+    return JSON.stringify(obj);
+  }
+  if (!_.isObject(obj)) {
     return `${obj}`;
   }
 

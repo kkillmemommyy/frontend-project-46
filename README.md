@@ -18,10 +18,10 @@
 1. Склонировать репозиторий и зайти в директорию с проектом:
 
 ```bash
-git clone https://github.com/kkillmemommyy/frontend-project-46.git
+git clone https://github.com/kkillmemommyy/gendiff.git
 ```
 ```bash
-cd frontend-project-46
+cd gendiff
 ```
 
 2. Установка:

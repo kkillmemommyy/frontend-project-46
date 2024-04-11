@@ -16,6 +16,7 @@ parserOptions:
 rules:
   no-console: 0
   no-restricted-syntax: 0
+  no-loop-func: 0
   import/extensions: 
     - error
     - ignorePackages

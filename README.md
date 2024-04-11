@@ -10,3 +10,45 @@
 Возможности утилиты:
 - Поддержка разных входных форматов: yaml, json
 - Генерация отчета в виде plain text, stylish и json
+
+
+## Установка
+1. Склонировать репозиторий и зайти в папку с проектом:
+
+```bash
+git clone https://github.com/kkillmemommyy/frontend-project-46.git
+```
+```bash
+cd frontend-project-46
+```
+
+2. Установка:
+```bash
+make install
+```
+
+или
+
+```bash
+npm ci --production
+```
+
+```bash
+npm link
+```
+
+3. Документация:
+```bash
+gendiff -h
+```
+
+## Удаление
+```bash
+make uninstall
+```
+
+или
+
+```bash
+npm uninstall --global @hexlet/code
+```

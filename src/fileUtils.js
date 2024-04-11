@@ -9,6 +9,7 @@ const isSupportedFormat = (format, stream = 'input') => {
     output: ['json', 'plain', 'stylish'],
   };
   const currentStream = supportedFormats[stream];
+  /* eslint-disable-next-line */
   for (const currentFormat of currentStream) {
     if (format === currentFormat) {
       return true;

@@ -24,18 +24,23 @@ const validate = (pathToFile1, pathToFile2, outputFormat) => {
   const fileExtension2 = getFileExtension(pathToFile2);
 
   if (!isSupportedFormat(fileExtension1)) {
+    /* eslint-disable-next-line */
     errors.push(`file1 extension must be ".json" or ".yaml" but given "${fileExtension1}"`);
   }
   if (!isSupportedFormat(fileExtension2)) {
+    /* eslint-disable-next-line */
     errors.push(`file2 extension must be ".json" or ".yaml" but given "${fileExtension2}"`);
   }
   if (!isSupportedFormat(outputFormat, 'output')) {
+    /* eslint-disable-next-line */
     errors.push(`supported formats are "json", "plain" or "stylish" but given "${outputFormat}"`);
   }
   if (!existsSync(pathToFile1)) {
+    /* eslint-disable-next-line */
     errors.push(`file with path "${pathToFile1}" does not exist`);
   }
   if (!existsSync(pathToFile2)) {
+    /* eslint-disable-next-line */
     errors.push(`file with path "${pathToFile2}" does not exist`);
   }
 

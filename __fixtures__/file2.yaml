@@ -19,4 +19,3 @@ group3:
     id:
       number: 45
   fee: 100500
-arr: [1, 2, [3, 5]]

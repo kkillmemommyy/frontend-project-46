@@ -2,16 +2,13 @@ import _ from 'lodash';
 
 const shift = '    ';
 
-const stringify = (obj, depth) => {
-  if (Array.isArray(obj)) {
-    return JSON.stringify(obj);
-  }
-  if (!_.isObject(obj)) {
-    return `${obj}`;
+const stringify = (item, depth) => {
+  if (!_.isObject(item)) {
+    return `${item}`;
   }
 
   const currentShift = shift.repeat(depth);
-  const entries = Object.entries(obj);
+  const entries = Object.entries(item);
   const strings = entries.map(([key, value]) => `${currentShift}    ${key}: ${stringify(value, depth + 1)}`);
   return `{\n${strings.join('\n')}\n${currentShift}}`;
 };

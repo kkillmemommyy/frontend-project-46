@@ -1,7 +1,7 @@
 import { fileURLToPath } from 'url';
 import { readFileSync } from 'fs';
 import path from 'path';
-import generateDifferences from '../src/core.js';
+import genDiff from '../src/index.js';
 
 const pathToCurrentDir = fileURLToPath(path.dirname(import.meta.url));
 const pathToFixturesDir = path.join(pathToCurrentDir, '..', '__fixtures__');
@@ -14,7 +14,15 @@ test('json with result in stylish', () => {
   const file2Path = pathToFixture('file2.json');
   const expected = readFile('stylish.txt');
 
-  expect(generateDifferences(file1Path, file2Path)).toEqual(expected);
+  expect(genDiff(file1Path, file2Path)).toEqual(expected);
+});
+
+test('json with result in plain', () => {
+  const file1Path = pathToFixture('file1.json');
+  const file2Path = pathToFixture('file2.json');
+  const expected = readFile('plain.txt');
+
+  expect(genDiff(file1Path, file2Path, 'plain')).toEqual(expected);
 });
 
 test('json with result in json', () => {
@@ -22,7 +30,7 @@ test('json with result in json', () => {
   const file2Path = pathToFixture('file2.json');
   const expected = readFile('json.txt');
 
-  expect(generateDifferences(file1Path, file2Path, 'json')).toEqual(expected);
+  expect(genDiff(file1Path, file2Path, 'json')).toEqual(expected);
 });
 
 test('yaml with result in stylish', () => {
@@ -30,7 +38,15 @@ test('yaml with result in stylish', () => {
   const file2Path = pathToFixture('file2.yaml');
   const expected = readFile('stylish.txt');
 
-  expect(generateDifferences(file1Path, file2Path)).toEqual(expected);
+  expect(genDiff(file1Path, file2Path)).toEqual(expected);
+});
+
+test('yaml with result in plain', () => {
+  const file1Path = pathToFixture('file1.yml');
+  const file2Path = pathToFixture('file2.yaml');
+  const expected = readFile('plain.txt');
+
+  expect(genDiff(file1Path, file2Path, 'plain')).toEqual(expected);
 });
 
 test('yaml with result in json', () => {
@@ -38,7 +54,7 @@ test('yaml with result in json', () => {
   const file2Path = pathToFixture('file2.yaml');
   const expected = readFile('json.txt');
 
-  expect(generateDifferences(file1Path, file2Path, 'json')).toEqual(expected);
+  expect(genDiff(file1Path, file2Path, 'json')).toEqual(expected);
 });
 
 test('get errors', () => {
@@ -51,5 +67,5 @@ test('get errors', () => {
   + `file with path "${file1Path}" does not exist\n`
   + `file with path "${file2Path}" does not exist`;
 
-  expect(generateDifferences(file1Path, file2Path, 'epub')).toEqual(expected);
+  expect(genDiff(file1Path, file2Path, 'epub')).toEqual(expected);
 });

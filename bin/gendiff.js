@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { program } from 'commander';
-import generateDifferences from '../src/core.js';
+import genDiff from '../src/index.js';
 
 program
   .name('gendiff')
@@ -15,7 +15,7 @@ program
   .argument('<pathToFile1>', 'relative or absolute')
   .argument('<pathToFile2>', 'relative or absolute')
   .action((pathToFile1, pathToFile2) => {
-    console.log(generateDifferences(pathToFile1, pathToFile2, program.opts().format));
+    console.log(genDiff(pathToFile1, pathToFile2, program.opts().format));
   });
 
 program.parse();

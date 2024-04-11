@@ -1,13 +1,5 @@
 import _ from 'lodash';
 
-const isArray = (arr) => Array.isArray(arr);
-const compareArr = (arr1, arr2) => {
-  if (JSON.stringify(arr1) === JSON.stringify(arr2)) {
-    return { value: arr1, status: 'unchanged' };
-  }
-  return { oldValue: arr1, value: arr2, status: 'changed' };
-};
-
 const buildDiff = (data1, data2) => {
   const dataKeys1 = Object.keys(data1);
   const dataKeys2 = Object.keys(data2);
@@ -27,10 +19,6 @@ const buildDiff = (data1, data2) => {
 
     if (value1 === value2) {
       return { key, value: value1, status: 'unchanged' };
-    }
-
-    if (isArray(value1) && isArray(value2)) {
-      return { key, ...compareArr(value1, value2) };
     }
 
     if (typeof value1 === 'object' && typeof value2 === 'object') {

@@ -1,25 +1,5 @@
 [
  {
-  "key": "arr",
-  "oldValue": [
-   1,
-   2,
-   [
-    3,
-    4
-   ]
-  ],
-  "value": [
-   1,
-   2,
-   [
-    3,
-    5
-   ]
-  ],
-  "status": "changed"
- },
- {
   "key": "common",
   "value": [
    {

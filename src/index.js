@@ -1,9 +1,13 @@
-// eslint-disable-next-line object-curly-newline
-import { readFile, deserialize, validate, getFileExtension } from './fileUtils.js';
 import buildDiff from './buildDiff.js';
-import formatter from './formatting/formatter.js';
+import formatter from './formatters/index.js';
+import {
+  readFile,
+  deserialize,
+  validate,
+  getFileExtension,
+} from './fileUtils.js';
 
-const generateDifferences = (pathToFile1, pathToFile2, outputFormat = 'stylish') => {
+const genDiff = (pathToFile1, pathToFile2, outputFormat = 'stylish') => {
   const errors = validate(pathToFile1, pathToFile2, outputFormat);
 
   if (errors.length > 0) {
@@ -20,4 +24,4 @@ const generateDifferences = (pathToFile1, pathToFile2, outputFormat = 'stylish')
   return formatter(diff, outputFormat);
 };
 
-export default generateDifferences;
+export default genDiff;

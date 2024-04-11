@@ -58,5 +58,7 @@ npm uninstall --global @hexlet/code
 
 
 ## Демонстрация:
-1. Вывод по умолчанию (stylish)
+1. Вывод по умолчанию (stylish):
 [![asciicast](https://asciinema.org/a/kawBv1HinpLVhhzPZAYkctxm4.svg)](https://asciinema.org/a/kawBv1HinpLVhhzPZAYkctxm4)
+2. Вывод в json:
+[![asciicast](https://asciinema.org/a/Hb8XtfUkQbxL5qdq8DSSn1QNP.svg)](https://asciinema.org/a/Hb8XtfUkQbxL5qdq8DSSn1QNP)
